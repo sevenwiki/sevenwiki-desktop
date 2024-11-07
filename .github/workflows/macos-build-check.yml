@@ -1,4 +1,4 @@
-name: Rust CI - Release (macOS)
+name: CI - Release (macOS)
 
 on:
   push:

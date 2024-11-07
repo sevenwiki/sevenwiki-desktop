@@ -1,4 +1,4 @@
-name: Rust CI - Release (Ubuntu)
+name: CI - Release (Ubuntu)
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Rust CI - Release (Windows)
+name: CI - Release (Windows)
 
 on:
   push:
