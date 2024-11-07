@@ -22,7 +22,7 @@ jobs:
 
       - name: Add x86_64 target for universal build
         run: rustup target add x86_64-apple-darwin
-        
+
       - name: Install dependencies
         run: |
           npm install
@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tauri-build-macos-universal
-          path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
+          path: ./sevenwiki-desktop/src-tauri/target/release/*
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"
