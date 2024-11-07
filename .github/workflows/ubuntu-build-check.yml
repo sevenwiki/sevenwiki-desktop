@@ -35,7 +35,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tauri-build-linux
-          path: ./sevenwiki-desktop/src-tauri/target/release/* 
+          path: ./sevenwiki-desktop/src-tauri/target/release/sevenwiki-desktop
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"
