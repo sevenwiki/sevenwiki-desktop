@@ -32,4 +32,4 @@ jobs:
         run: npm run build
 
       - name: Result
-      run: echo "Build completed on ${{ runner.os }}"
+        run: echo "Build completed on ${{ runner.os }}"
