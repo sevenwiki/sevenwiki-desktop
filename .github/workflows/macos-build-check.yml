@@ -25,14 +25,14 @@ jobs:
           npm install
         working-directory: ./sevenwiki-desktop/
 
-      - name: Build the Tauri app
-        run: npm run build
+      - name: Build the Tauri app for Universal macOS
+        run: npm run tauri build --target universal-apple-darwin
         working-directory: ./sevenwiki-desktop/
 
-      - name: Upload build artifacts (macOS)
+      - name: Upload universal build artifacts (macOS)
         uses: actions/upload-artifact@v3
         with:
-          name: tauri-build-macos
+          name: tauri-build-macos-universal
           path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
 
       - name: Result
