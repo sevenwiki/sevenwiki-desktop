@@ -20,6 +20,9 @@ jobs:
           toolchain: stable
           override: true
 
+      - name: Add x86_64 target for universal build
+        run: rustup target add x86_64-apple-darwin
+        
       - name: Install dependencies
         run: |
           npm install
