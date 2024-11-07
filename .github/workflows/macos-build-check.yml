@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: tauri-build-macos
-          path: ./sevenwiki-desktop/src-tauri/target/release/sevenwiki-desktop
+          path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"
