@@ -20,23 +20,20 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Add x86_64 target for universal build
-        run: rustup target add x86_64-apple-darwin
-
       - name: Install dependencies
         run: |
           npm install
         working-directory: ./sevenwiki-desktop/
 
-      - name: Build the Tauri app for Universal macOS
-        run: npm run build -- --target universal-apple-darwin
+      - name: Build the Tauri app
+        run: npm run build
         working-directory: ./sevenwiki-desktop/
 
-      - name: Upload universal build artifacts (macOS)
+      - name: Upload build artifacts (macOS)
         uses: actions/upload-artifact@v3
         with:
-          name: tauri-build-macos-universal
-          path: ./sevenwiki-desktop/src-tauri/target/release/*
+          name: tauri-build-macos
+          path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"
