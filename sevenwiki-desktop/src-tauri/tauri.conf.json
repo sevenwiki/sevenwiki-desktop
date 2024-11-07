@@ -13,7 +13,7 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "title": "sevenwiki-desktop",
+        "title": "Sevenwiki",
         "width": 1280,
         "height": 720
       }
