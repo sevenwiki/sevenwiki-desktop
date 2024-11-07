@@ -1,0 +1,36 @@
+name: Rust CI - Release (macOS)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install dependencies
+        run: |
+          npm install
+        working-directory: ./sevenwiki-desktop/
+
+      - name: Build the Tauri app
+        run: npm run build
+        working-directory: ./sevenwiki-desktop/
+
+      - name: Result
+        run: echo "Build completed on ${{ runner.os }}"
+        working-directory: ./sevenwiki-desktop/
