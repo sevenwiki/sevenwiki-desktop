@@ -26,7 +26,7 @@ jobs:
         working-directory: ./sevenwiki-desktop/
 
       - name: Build the Tauri app for Universal macOS
-        run: npm run tauri build --target universal-apple-darwin
+        run: npm run build --target universal-apple-darwin
         working-directory: ./sevenwiki-desktop/
 
       - name: Upload universal build artifacts (macOS)
