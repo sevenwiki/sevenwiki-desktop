@@ -24,6 +24,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          sudo apt-get update
+          sudo apt-get install -y libgdk3.0-dev pkg-config
           npm install
         working-directory: ./sevenwiki-desktop/
 
