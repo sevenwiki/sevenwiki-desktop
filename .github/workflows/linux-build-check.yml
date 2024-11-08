@@ -1,4 +1,4 @@
-name: CI - Release (Ubuntu)
+name: CI - Release (Linux)
 
 on:
   push:
@@ -30,12 +30,20 @@ jobs:
       - name: Build the Tauri app
         run: npm run build
         working-directory: ./sevenwiki-desktop/
+
+      - name: Package all Linux artifacts into a ZIP
+        run: |
+          mkdir -p artifacts
+          cp ./sevenwiki-desktop/src-tauri/target/release/bundle/deb/*.deb artifacts/
+          cp ./sevenwiki-desktop/src-tauri/target/release/bundle/rpm/*.rpm artifacts/
+          cp ./sevenwiki-desktop/src-tauri/target/release/bundle/appimage/*.AppImage artifacts/
+          zip -r tauri-build-linux.zip artifacts
     
       - name: Upload build artifacts (Linux)
         uses: actions/upload-artifact@v3
         with:
           name: tauri-build-linux
-          path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
+          path: tauri-build-linux.zip
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"

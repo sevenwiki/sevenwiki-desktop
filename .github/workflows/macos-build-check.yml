@@ -29,11 +29,18 @@ jobs:
         run: npm run build
         working-directory: ./sevenwiki-desktop/
 
+      - name: Compress .app folder
+        run: |
+          cd ./sevenwiki-desktop/src-tauri/target/release/bundle/macos/
+          zip -r app.zip *.app
+
       - name: Upload build artifacts (macOS)
         uses: actions/upload-artifact@v3
         with:
           name: tauri-build-macos
-          path: ./sevenwiki-desktop/src-tauri/target/release/bundle/*
+          path: |
+            ./sevenwiki-desktop/src-tauri/target/release/bundle/macos/app.zip
+            ./sevenwiki-desktop/src-tauri/target/release/bundle/dmg/*.dmg
 
       - name: Result
         run: echo "Build completed on ${{ runner.os }}"
