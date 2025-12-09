@@ -5,9 +5,9 @@
   "identifier": "com.sevenwiki.sevenwiki-desktop",
   "build": {
     "beforeDevCommand": "",
-    "devUrl": "https://namu.wiki",
+    "devUrl": "https://sevenwiki-ui.pages.dev",
     "beforeBuildCommand": "",
-    "frontendDist": "https://namu.wiki"
+    "frontendDist": "https://sevenwiki-ui.pages.dev"
   },
   "app": {
     "withGlobalTauri": true,
