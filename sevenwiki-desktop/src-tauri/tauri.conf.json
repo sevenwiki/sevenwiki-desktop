@@ -5,9 +5,9 @@
   "identifier": "com.sevenwiki.sevenwiki-desktop",
   "build": {
     "beforeDevCommand": "",
-    "devUrl": "https://sevenwiki-ui.pages.dev",
+    "devUrl": "https://dev.seven.wiki",
     "beforeBuildCommand": "",
-    "frontendDist": "https://sevenwiki-ui.pages.dev"
+    "frontendDist": "https://dev.seven.wiki"
   },
   "app": {
     "withGlobalTauri": true,
